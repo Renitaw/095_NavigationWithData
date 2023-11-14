@@ -18,6 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
 import com.example.esjumbo.data.OrderUIState
 import com.example.esjumbo.ui.theme.komponen.FormatLabelHarga
 
@@ -44,6 +45,10 @@ fun HalamanDua (
                 .padding(dimensionResource(R.dimen.padding_medium)),
             verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_small))
         ) {
+            Text(text = "Nama")
+            Text(text = orderUiState.nama)
+            Divider()
+            Spacer(modifier = Modifier.padding(16.dp))
             items.forEach { item -> Column {
                 Text(item.first.uppercase())
                 Text(text = item.second.toString(),
