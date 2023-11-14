@@ -3,6 +3,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
@@ -39,27 +40,25 @@ fun HalamanForm(
         mutableStateOf("")
     }
 
-    var lisDataTxt: MutableList<String> = mutableListOf(namaTxt, alamatTxt, telponTxt)
-
-
+    var ListDataTxt: MutableList<String> = mutableListOf(namaTxt, alamatTxt, telponTxt)
 
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center,
             modifier = Modifier
-                .fillMaxWidth()
+                .fillMaxSize()
                 .padding(16.dp)
         ) {
             Text(
                 text = "Data Pelanggan",
                 fontWeight = FontWeight.Bold,
-                fontSize = 18.sp,
+                fontSize = 20.sp,
                 modifier = Modifier.padding(bottom = 16.dp)
             )
             OutlinedTextField(
                 value = namaTxt,
                 onValueChange = { namaTxt = it },
-                label = { Text(text = "Nama") })
+                label = { Text(text = "Nama Pelanggan") })
 
             OutlinedTextField(
                 value = alamatTxt,
@@ -69,23 +68,20 @@ fun HalamanForm(
             OutlinedTextField(
                 value = telponTxt,
                 onValueChange = { telponTxt = it },
-                label = { Text(text = "Telepon") })
+                label = { Text(text = "No Telepon") })
 
 
             Spacer(modifier = Modifier.padding(16.dp))
 
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 16.dp),
-                horizontalArrangement = Arrangement.SpaceBetween
-            ) {
+            Row {
                 Button(onClick = onCancelButtonClick) {
                     Text(text = stringResource(R.string.cancel))
                 }
-                Spacer(modifier = Modifier.width(16.dp))
-                Button(onClick = { onSubmitButtonClick(lisDataTxt) }) {
-                    Text(text = stringResource(R.string.next))
+
+                Spacer(modifier = Modifier.padding(50.dp))
+
+                Button(onClick = { onSubmitButtonClick(ListDataTxt) }) {
+                    Text(text = stringResource(id = R.string.next))
                 }
             }
         }
