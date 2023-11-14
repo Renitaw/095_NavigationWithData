@@ -81,7 +81,7 @@ fun HalamanForm(
                 Spacer(modifier = Modifier.padding(50.dp))
 
                 Button(onClick = { onSubmitButtonClick(ListDataTxt) }) {
-                    Text(text = stringResource(id = R.string.next))
+                    Text(text = stringResource(id = R.string.back))
                 }
             }
         }
