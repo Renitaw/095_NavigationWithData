@@ -2,6 +2,7 @@
     ExperimentalMaterial3Api::class)
     package com.example.esjumbo
 
+import HalamanForm
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -34,6 +35,7 @@ enum class PengelolaHalaman {
     Home,
     Rasa,
     Summary,
+    Formulir
 }
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -87,8 +89,15 @@ fun EsJumboApp(
             composable(route = PengelolaHalaman.Home.name){
                 HalamanHome (
                     onNextButtonClicked = {
-                        navController.navigate(PengelolaHalaman.Rasa.name)})
+                        navController.navigate(PengelolaHalaman.Formulir.name)})
             }
+            composable(route = PengelolaHalaman.Formulir.name){
+                HalamanForm(onSubmitButtonClick = {
+                    viewModel.setContact(it)
+                    navController.navigate(PengelolaHalaman.Rasa.name)
+                })
+            }
+
             composable(route = PengelolaHalaman.Rasa.name){
                 val context = LocalContext.current
                 HalamanSatu(
