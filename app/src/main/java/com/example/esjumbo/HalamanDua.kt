@@ -53,7 +53,10 @@ fun HalamanDua (
             Text(text = orderUiState.alamat)
             Divider()
             Spacer(modifier = Modifier.padding(16.dp))
-
+            Text(text = "No Telepon")
+            Text(text = orderUiState.noTelp)
+            Divider()
+            Spacer(modifier = Modifier.padding(16.dp))
             items.forEach { item -> Column {
                 Text(item.first.uppercase())
                 Text(text = item.second.toString(),
