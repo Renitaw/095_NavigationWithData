@@ -22,6 +22,7 @@ import com.example.esjumbo.data.OrderUIState
 import com.example.esjumbo.ui.theme.komponen.FormatLabelHarga
 
 
+
 @Composable
 fun HalamanDua (
     orderUiState: OrderUIState,
@@ -29,9 +30,10 @@ fun HalamanDua (
     //onSendButtonClicked: (String, String) -> Unit,
     modifier: Modifier = Modifier
 ) {
+
     val items = listOf(
         Pair(stringResource(R.string.quantity), orderUiState.jumlah),
-        Pair(stringResource(R.string.flavor), orderUiState.rasa)
+        Pair(stringResource(R.string.flavor), orderUiState.rasa),
     )
     Column(
         modifier = modifier,
@@ -76,3 +78,7 @@ fun HalamanDua (
         }
     }
 }
+
+
+
+

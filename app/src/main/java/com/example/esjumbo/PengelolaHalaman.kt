@@ -19,18 +19,21 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.esjumbo.data.OrderUIState
 import com.example.esjumbo.data.SumberData.flavors
+import com.example.esjumbo.ui.theme.ESJUMBOTheme
 
 enum class PengelolaHalaman {
     Home,
     Rasa,
-    Summary
+    Summary,
 }
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -39,6 +42,7 @@ fun EsJumboAppBar(
     navigasiUp: () -> Unit,
     modifier: Modifier = Modifier
 ) {
+
     TopAppBar(
         title = { Text (stringResource (id = R.string.app_name)) },
         colors = TopAppBarDefaults.mediumTopAppBarColors (
@@ -79,8 +83,7 @@ fun EsJumboApp(
             navController = navController as NavHostController,
             startDestination = PengelolaHalaman.Home.name,
             modifier = Modifier.padding(innerPadding)
-        )
-        {
+        ) {
             composable(route = PengelolaHalaman.Home.name){
                 HalamanHome (
                     onNextButtonClicked = {
@@ -125,3 +128,4 @@ private fun cancelOrderAndNavigateToRasa (
 ) {
     navController.popBackStack(PengelolaHalaman.Rasa.name, inclusive = false)
 }
+
