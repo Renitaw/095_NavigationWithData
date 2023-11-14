@@ -95,7 +95,11 @@ fun EsJumboApp(
                 HalamanForm(onSubmitButtonClick = {
                     viewModel.setContact(it)
                     navController.navigate(PengelolaHalaman.Rasa.name)
-                })
+                },
+                    onCancelButtonClick = {
+                        navController.popBackStack()
+                    }
+                )
             }
 
             composable(route = PengelolaHalaman.Rasa.name){
