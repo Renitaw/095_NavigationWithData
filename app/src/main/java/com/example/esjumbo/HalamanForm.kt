@@ -58,17 +58,22 @@ fun HalamanForm(
             OutlinedTextField(
                 value = namaTxt,
                 onValueChange = { namaTxt = it },
-                label = { Text(stringResource(id = R.string.namaTxt)) })
+                label = { Text(stringResource(id = R.string.namaTxt)) },
+                placeholder = { Text(text = "Masukkan Nama Pelanggan")}
+            )
 
             OutlinedTextField(
                 value = telponTxt,
                 onValueChange = { telponTxt = it },
-                label = { Text(stringResource(id = R.string.telponTxt)) })
+                label = { Text(stringResource(id = R.string.telponTxt)) },
+                placeholder = { Text(text = "Masukkan No Telepon")}
+            )
 
             OutlinedTextField(
                 value = alamatTxt,
                 onValueChange = { alamatTxt = it },
                 label = { Text(stringResource(id = R.string.alamatTxt)) },
+                placeholder = { Text(text = "Masukkan Alamat")}
                 )
 
 
