@@ -33,16 +33,16 @@ fun HalamanForm(
     var namaTxt by remember {
         mutableStateOf("")
     }
-    var alamatTxt by remember {
-        mutableStateOf("")
-    }
     var telponTxt by remember {
         mutableStateOf("")
     }
+    var alamatTxt by remember {
+        mutableStateOf("")
+    }
 
-    var ListDataTxt: MutableList<String> = mutableListOf(namaTxt, alamatTxt, telponTxt)
+    var ListDataTxt: MutableList<String> = mutableListOf(namaTxt, telponTxt, alamatTxt)
 
-        Column(
+    Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center,
             modifier = Modifier
@@ -61,14 +61,15 @@ fun HalamanForm(
                 label = { Text(stringResource(id = R.string.namaTxt)) })
 
             OutlinedTextField(
-                value = alamatTxt,
-                onValueChange = { alamatTxt = it },
-                label = { Text(stringResource(id = R.string.alamatTxt)) })
-
-            OutlinedTextField(
                 value = telponTxt,
                 onValueChange = { telponTxt = it },
                 label = { Text(stringResource(id = R.string.telponTxt)) })
+
+            OutlinedTextField(
+                value = alamatTxt,
+                onValueChange = { alamatTxt = it },
+                label = { Text(stringResource(id = R.string.alamatTxt)) },
+                )
 
 
             Spacer(modifier = Modifier.padding(16.dp))

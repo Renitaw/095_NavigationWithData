@@ -18,8 +18,9 @@ class OrderViewModel : ViewModel() {
         _stateUI.update { stateSaatIni ->
             stateSaatIni.copy(
                 nama = listData[0],
-                alamat = listData[1],
-                noTelp = listData[2]
+                noTelp = listData[1],
+                alamat = listData[2]
+
             )
         }
     }
